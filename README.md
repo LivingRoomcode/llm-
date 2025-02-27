@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+# LLM 对话框
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个基于 React + TypeScript 的智能对话界面,集成了 Coze API 实现智能对话功能。
 
-Currently, two official plugins are available:
+## 主要功能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. 多会话管理
+- 支持创建多个独立对话
+- 可在不同对话间切换
+- 每个对话有独立的历史记录
 
-## Expanding the ESLint configuration
+### 2. 实时对话
+- 集成 Coze API 进行智能对话
+- 支持流式响应,实时显示 AI 回复
+- 打字机效果显示回复内容
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 3. 文件处理功能
+- 支持图片上传预览
+- 支持多文件上传
+- 支持文件名称和大小显示
+- 支持删除已上传文件
 
-- Configure the top-level `parserOptions` property like this:
+### 4. 代码展示
+- Markdown 格式解析
+- 代码语法高亮
+- 代码块一键复制功能
+- 支持多种编程语言
+
+### 5. 界面特性
+- 响应式设计,适配移动端
+- 自动滚动到最新消息
+- 支持快捷键发送(Enter)
+- 加载状态提示
+
+### 6. 图片处理
+- 支持图片上传到 GitHub
+- 自动生成图片预览
+- 支持删除已上传图片
+- 支持多图片同时上传
+
+## 技术栈
+
+- React 19
+- TypeScript
+- Vite
+- @coze/api
+- react-markdown
+- react-syntax-highlighter
+- GitHub API (图片存储)
+
+## 环境变量配置
+
+项目需要以下环境变量:
 
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+VITE_GITHUB_ACCESS_TOKEN=你的GitHub访问令牌
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 开发启动
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+# 安装依赖
+npm install
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# 启动开发服务器
+npm run dev
+
+# 构建项目
+npm run build
 ```
+
+## 项目结构
+
+```
+src/
+  ├── components/        # 组件目录
+  │   ├── ChatDialog.tsx # 主对话框组件
+  │   └── type.ts       # 类型定义
+  ├── api/              # API 相关
+  │   └── imageUploadUtils.ts # 图片上传工具
+  ├── config/           # 配置文件
+  │   └── initConfig.tsx # Coze API 配置
+  └── App.tsx           # 应用入口
+```
+
+## 注意事项
+
+1. 使用前需要配置 Coze API 的 token 和 bot_id
+2. 需要 GitHub token 来启用图片上传功能
+3. 建议使用现代浏览器以获得最佳体验
+
+## License
+
+MIT
