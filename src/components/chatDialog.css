@@ -5,7 +5,7 @@ html {
 
 .app-container {
     display: flex;
-    height: 100vh;
+    height: 90vh;
 }
 
 .conversation-list {
@@ -30,8 +30,8 @@ html {
 
 .conversation-item.active {
     background-color: #e0e0e0;
-    color: grey;
-    /* 激活状态下文字颜色设置为黑色 */
+    color: rgb(39, 42, 184);
+    /* 激活状态下文字颜色*/
 }
 
 .chat-container {

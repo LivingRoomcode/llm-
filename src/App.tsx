@@ -2,8 +2,8 @@ import  ChatDialog  from './components/ChatDialog'
 
 function App() {
   return (
-    <>
-      {/* 使用 JSX 标签渲染 ChatDialog 组件 */}
+    <>  
+  <h1>LLM 对话框 作者：livinroomcode</h1>
       <ChatDialog />
     </>
   )
