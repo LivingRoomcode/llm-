@@ -22,14 +22,17 @@ const handleImageUpload = async (
             const path = `images/${file.name}`;
 
             const reader = new FileReader();
+            //将图片内容编码为 Base64 字符串的格式
             reader.readAsDataURL(file);
 
             await new Promise((resolve, reject) => {
                 reader.onload = async () => {
+                    // DataURL 格式通常为 data: image / jpeg; base64, /9j/4AAQSkZJRgABAQEASABIAAD...
+                    // 通过 split(',') 分割字符串并取第二个元素。
                     const base64Data = reader.result.toString().split(',')[1];
 
                     try {
-                        // 检查文件是否存在并获取 SHA
+                        // 先发生获取请求检查图片文件是否存在并获取 SHA
                         let sha: string | null = null;
                         try {
                             const getResponse = await fetch(

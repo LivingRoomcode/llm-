@@ -79,12 +79,14 @@ src/
   │   └── initConfig.tsx # Coze API 配置
   └── App.tsx           # 应用入口
 ```
+![图片生成功能：](src/images/1.png)
+![代码高亮显示：](src/images/2.png)
 
 ## 注意事项
 
 1. 使用前需要配置 Coze API 的 token 和 bot_id
 2. 需要 GitHub token 来启用图片上传功能
-3. 建议使用现代浏览器以获得最佳体验
+
 
 ## License
 
