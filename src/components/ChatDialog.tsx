@@ -17,7 +17,6 @@ const a=10
 const { TextArea } = Input;
 const a=10
 
-
 const ChatDialog = () => {
     const [conversations, setConversations] = useState<Conversation[]>([]);
     const [currentConversationIndex, setCurrentConversationIndex] = useState(0);
