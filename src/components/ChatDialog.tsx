@@ -12,6 +12,8 @@ import { CozeAPI, ChatEventType, RoleType } from '@coze/api';
 import { token, baseURL, bot_id } from '../config/initConfig';
 import './ChatDialog.scss';
 
+const a=10
+
 const { TextArea } = Input;
 
 const ChatDialog = () => {
