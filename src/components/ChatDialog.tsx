@@ -15,7 +15,7 @@ import './ChatDialog.scss';
 const a=10
 
 const { TextArea } = Input;
-const a=10
+
 
 const ChatDialog = () => {
     const [conversations, setConversations] = useState<Conversation[]>([]);
